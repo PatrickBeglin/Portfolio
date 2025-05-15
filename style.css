@@ -568,3 +568,29 @@ h1 {
 }
 
 
+/*--------------ipad------------------------*/
+@media only screen
+  and (min-width: 768px)      /* at least iPad portrait width */
+  and (max-width: 1366px)     /* up to large iPad Pro landscape */
+  and (pointer: coarse)       /* touch input device */
+  and (hover: none) {         /* cannot hover (i.e. not a mouse) */
+
+  /* hide your floating nav */
+  .bottom-tab,
+  .bottom-tab-starter {
+    display: none !important;
+  }
+
+  /* show the links row under the image */
+  .mobile-nav-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin: 2rem auto;
+  }
+  .mobile-nav-links a {
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
