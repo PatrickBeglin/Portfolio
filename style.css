@@ -470,12 +470,12 @@ h1 {
 /*------------------- mobile my work links -------------- */
 .mobile-nav-links {
     display: none; /* Hidden by default on desktop */
-    margin: 4rem auto;
+    margin: 8rem auto;
     text-align: center;
     font-weight: bold;
     font-size: 18px;
     width: 100%;
-    gap: 10px;
+    gap: 5vh;
     flex-direction: column;
   }
   
@@ -559,6 +559,10 @@ h1 {
     }
 
     .bottom-tab-starter{
+        display: none;
+    }
+
+    .image-container{
         display: none;
     }
 }
