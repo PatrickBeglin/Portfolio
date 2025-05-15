@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeader(); // Load the header
     loadFooter();
     
-    const images = ['tropp4.jpg', 'tropp/final-design4.jpg', 'menos1.jpg', 'tropp/final-design3.jpg', 'menos2.jpg', 'binder/final-design3.jpg'];
+    const images = ['tropp4.jpg', 'tropp/final-design4.jpg', 'menos1.jpg', 'tropp/final-design3.jpg', 'menos2.jpg', 'binder/final-design3.jpg', 'coi/mockup2.png'];
     let currentIndex = 0;
 
     const mainImage = document.getElementById('main-image');
@@ -90,9 +90,9 @@ const works = [
         link: "tropp.html"
     },
     {
-        title: "Menos",
-        image: "menos/menos2.jpg",
-        link: "menos.html"
+        title: "COI",
+        image: "coi/mockup.png",
+        link: "coi.html"
     },
     {
         title: "Binder",
@@ -105,9 +105,9 @@ const works = [
         link: "skok.html"
     },
     {
-        title: "COI",
-        image: "coi/mockup.png",
-        link: "coi.html"
+        title: "Menos",
+        image: "menos/menos2.jpg",
+        link: "menos.html"
     }
 ];
 
