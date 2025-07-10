@@ -28,19 +28,78 @@ async function loadFooter() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader(); // Load the header
-    loadFooter();
+    loadFooter(); // load the footer
     
-    const images = ['tropp4.jpg', 'tropp/final-design4.jpg', 'menos1.jpg', 'tropp/final-design3.jpg', 'menos2.jpg', 'binder/final-design3.jpg', 'coi/mockup2.png'];
+
+
+    const images = ['tropp4.jpg', 'tropp/final-design4.jpg', 'menos1.jpg', 'tropp/final-design3.jpg', 'menos2.jpg', 'binder/final-design4.jpg', 'coi/mockup2.png'];
+    
     let currentIndex = 0;
 
-    const mainImage = document.getElementById('main-image');
+    const mainImage = document.getElementById('right-image');
 
-    const moveThreshold = 20;
+
+    const moveThreshold = 100;
 
     let x = 0;
     let y = 0;
     let isImageChanging = false;
+    
 
+    const image_data = [
+        {
+            link: 'tropp.html',
+            textLeft: '01',
+            textRight: 'Tropp'
+        },
+        {
+            link: 'coi.html',
+            textLeft: '02',
+            textRight: 'COI'
+        },
+        {
+            link: 'skok.html',
+            textLeft: '03',
+            textRight: 'Skok'
+        },
+        {
+            link: 'binder.html',
+            textLeft: '04',
+            textRight: 'Binder'
+        },
+        {
+            link: 'menos.html',
+            textLeft: '05',
+            textRight: 'Menos'
+        }
+    ]
+
+
+    const imageIdx = {
+            0: 0,
+            1: 0,
+            2: 4,
+            3: 0,
+            4: 4,
+            5: 3,
+            6: 1
+        }
+
+    function handleLinkSwitch(currentIndex){
+        var currentLinkIdx = imageIdx[currentIndex]
+        var link = document.getElementById('image-link')
+        link.href = image_data[currentLinkIdx].link
+
+        var textLeft = document.getElementById('bottom-left')
+        var textRight = document.getElementById('bottom-right')
+
+        textLeft.textContent = image_data[currentLinkIdx].textLeft
+        textRight.textContent = image_data[currentLinkIdx].textRight
+    }
+
+   
+
+    // changes image if you move 20 or more
     function handleImageSwitch(event) {
         if (isImageChanging) return;
 
@@ -51,21 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (distanceMoved > moveThreshold) {
             isImageChanging = true;
 
-            currentIndex = (currentIndex + 1) % images.length;
-
+            currentIndex = (currentIndex + 1) % images.length;  // increments by one and wraps around length of images
+            handleLinkSwitch(currentIndex)
+            
             mainImage.src = images[currentIndex];
 
             x = event.clientX;
             y = event.clientY;
 
-            mainImage.addEventListener('load', () => {
-                isImageChanging = false;
-            }, { once: true });
+            mainImage.addEventListener('load', () => { // load triggers when it has fully loaded
+                isImageChanging = false; // if loaded then its not changing
+            }, { once: true }); // runs once
         }
     }
     mainImage.src = images[currentIndex];
     mainImage.addEventListener('mousemove', handleImageSwitch);
 
+
+
+
+
+   
+   
+   // for the main page nav bar 
+   
     // Get references to the bottom-tab-starter and bottom-tab elements
     const bottomTabStarter = document.querySelector('.bottom-tab-starter');
     const bottomTab = document.querySelector('.bottom-tab');
@@ -82,6 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 });
+
+
+
+
+
+
+
+
+// below this is for nav bar
 
 const works = [
     {

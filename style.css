@@ -131,7 +131,7 @@ h1 {
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
-    width: 97vw;
+    width: 98vw;
     margin: 0 auto;
     padding-top: 5vw;
     padding-bottom: 5vw;
@@ -174,7 +174,7 @@ h1 {
 /* --------------------- Project Class Tags --------------------- */
 .projectclass {
     font-size: 15px;
-    width: 97vw;
+    width: 98vw;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -274,7 +274,7 @@ h1 {
 /* --------------------- Video Styles --------------------- */
 .topvideo,
 .topvideo_small {
-    width: 97vw;
+    width: 98vw;
     margin: 0 auto;
     display: block;
     position: relative;
@@ -316,7 +316,7 @@ h1 {
     display: block;
 }
 .image_template {
-    width: 97vw;
+    width: 98vw;
 }
 .image_template_small {
     width: 50vw;
@@ -330,7 +330,7 @@ h1 {
 }
 .troppimages {
     border-radius: 5px;
-    margin-top: 1%;
+    margin-top: 1rem;
 }
 
 /* --------------------- About Me Page Specific --------------------- */
@@ -420,7 +420,7 @@ h1 {
 /* --------------- coi double spreads ----------------*/
 
 .image-row {
-    width: 97vw;
+    width: 98vw;
     display: flex;
     gap: 1%;               /* space between cards */
     box-sizing: border-box;
@@ -430,7 +430,7 @@ h1 {
   }
 
   .image-row2 {
-    width: 97vw;
+    width: 98vw;
     display: flex;
     gap: 0px;               /* space between cards */
     box-sizing: border-box;
@@ -507,13 +507,13 @@ h1 {
   .topcontainer {
     display: grid;
     grid-template-columns: 1fr;
-    width: 97vw;          /* make the container itself 97vw */
+    width: 98vw;          /* make the container itself 97vw */
     margin: 0 auto;
   }
 
   /* ensure your <h1> sits on top */
   .topcontainer .title {
-    width: 97vw;
+    width: 98vw;
     margin: 0 auto 1rem;  /* optional: add some space below */
     text-align: left;     /* or center, as you like */
     font-size: 24px;
@@ -521,7 +521,7 @@ h1 {
 
   /* force the paragraph to span full viewport width */
   .topcontainer .info {
-    width: 97vw;
+    width: 98vw;
     padding-left: 0;      /* remove the 20px indent so it doesn’t overflow */
     margin: 0 auto;
     text-align: left;
@@ -565,6 +565,25 @@ h1 {
     .image-container{
         display: none;
     }
+  }
+
+  @media (max-width: 600px) {
+  .main-right {
+    display: none !important;
+  }
+  .bottom-row {
+    display: none !important;
+  }
+  .main-left {
+    width: 100vw !important;
+    align-items: flex-start;
+    padding-left: 4vw;
+  }
+  .title-main, .title-p {
+    font-size: 7vw !important;
+    text-align: left;
+    margin-left: 0;
+  }
 }
 
 
@@ -594,3 +613,208 @@ h1 {
     padding: 0 1rem;
   }
 }
+
+
+
+
+
+
+/* ------------------------ main split ----------*/
+
+.main-split {
+    width: 98vw;
+    height: 93vh;
+    display: flex;
+    gap: 2%;               /* space between cards */
+    box-sizing: border-box;
+    justify-content: center; /* centers the cards horizontally */
+    margin: 0 auto; 
+ 
+}
+
+  .main-left {
+    background-color: rgb(255, 255, 255);
+    width: 25%;
+    height: 100%; /* Make it fill the full height of the parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push top and bottom apart */
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    }
+  
+    .bottom-row {
+    display: flex;
+    justify-content: space-between; /* pushes inner items to far left and far right */
+    width: 100%;
+}
+
+  .main-right {
+    border-radius: 5px;
+    width: 75%;     /* same height as small-card */
+    overflow: hidden;
+  }
+
+  .main-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the box and crops to fit */
+
+}
+.top-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0%; /* spacing between title and paragraph */
+}
+
+.title-p{
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 0;
+}
+.title-main {
+    word-spacing: -20px;
+    letter-spacing: -5px;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 65px;
+    margin-top: 0; /* ⬅️ removes the default space above */
+}
+
+#bottom-left{
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#bottom-right{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* ----------- nav cards ------------------------*/
+
+.card-grid {
+  width: 98vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default: 3 columns */
+  gap: 1rem ; /* spacing between cards */
+}
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+      display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.card:hover .nav-image {
+    transform: scale(1.01);
+    transition: filter 1s, transform 0.3s;
+  }
+
+/* Tablet (iPad) — 2 across */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    padding-top: 1rem;
+  }
+}
+
+/* Mobile — 1 across */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-split {
+    display: none !important;
+  }
+  .card-grid {
+    margin-top: 0 !important;
+  }
+}
+
+@media only screen
+  and (min-width: 768px)
+  and (max-width: 1366px)
+  and (pointer: coarse)
+  and (hover: none) {
+  .main-split {
+    display: none !important;
+  }
+  .card-grid {
+    margin-top: 0 !important;
+  }
+}
+
+
+.nav-image {
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 16 / 10;  /* ✅ Keeps it responsive and fitting */
+  object-fit: cover;
+}
+
+
+.nav-title{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-p{
+    padding-top: 0px;
+    margin: 0;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.bottom-tabs{
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap; /* allows wrapping if space is tight */
+    gap: 8px;         /* spacing between tags */
+}
+
+.tag{
+    color: #979797;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: lighter;
+    padding: 1px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid #979797;
+    border-radius: 500px;
+}
+
+/* Wider footer for home page */
+body#index .contactinfo, .contactinfo.home-footer {
+  width: 98vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
