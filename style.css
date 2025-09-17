@@ -1,0 +1,850 @@
+/* --------------------- Font Faces --------------------- */
+@font-face {
+    font-family: 'Kettler';
+    src: url('./TRIALKettler-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kettler';
+    src: url('./TRIALKettler-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --------------------- Base Styles --------------------- */
+body, html {
+    font-family: 'kettler';
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Allow content to dictate height */
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar in Firefox */
+body,
+html {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE 10+ */
+  overflow: auto;              /* keep scrolling enabled */
+}
+
+
+
+/* --------------------- Typography --------------------- */
+.title {
+    font-weight: bolder;
+    font-size: 40px;
+}
+.titlep,
+.titlep2 {
+    font-weight: bolder;
+    font-size: 24px;
+    text-align: left;
+}
+.titlep {
+    padding-left: 20px;
+}
+.titlep2 {
+    padding-right: 20px;
+}
+.info {
+    padding-left: 20px;
+    font-size: 18px;
+}
+h1 {
+    font-size: 15px;
+}
+.other-work-title {
+    width: 79vw;
+    margin: 10% auto 0;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+/* --------------------- Header --------------------- */
+.header-content {
+    margin: 0 auto;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    padding: 0 1vw;
+    height: 50px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.header-left a,
+.header-right a {
+    text-decoration: none;
+    color: black;
+}
+.header-left a:hover,
+.header-right a:hover {
+    color: red;
+}
+.header-right {
+    font-size: 15px;
+    display: flex;
+    gap: 40px;
+}
+
+/* --------------------- Layout Containers --------------------- */
+.image-container {
+    width: 98vw;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-bottom: 10px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.fullwidth {
+    width: 70vw;
+    margin: 5vw auto;
+    padding: 0;
+}
+.fullwidth img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.topcontainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 98vw;
+    margin: 0 auto;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+}
+.topcontainer2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 5vw;
+}
+.section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 1vw;
+}
+.section2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+.section_thumbnail {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 1vw;
+    margin-bottom: 5vh;
+}
+
+/* --------------------- Project Class Tags --------------------- */
+.projectclass {
+    font-size: 15px;
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.redinfo {
+    /* Add specific styling if needed */
+}
+
+/* --------------------- Bottom Tab Navigation --------------------- */
+.bottom-tab-starter {
+    opacity: 1;
+    transition: transform 0.03s ease;
+    padding: 0 1.5%;
+    font-weight: bolder;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 8px 16px rgba(0,0,0,0.12);
+    z-index: 2000;
+    pointer-events: auto;
+}
+.bottom-tab-starter.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.bottom-tab {
+    opacity: 0;
+    transition: transform 0.03s ease;
+    pointer-events: none;
+    gap: 5vw;
+    padding: 0 3%;
+    font-weight: bolder;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 8px 16px rgba(0,0,0,0.12);
+    z-index: 2;
+}
+.bottom-tab.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.bottom-tab a {
+    text-decoration: none;
+    color: black;
+}
+.bottomlinks:hover {
+    cursor: pointer;
+    color: red;
+}
+
+/* --------------------- Other Work Navigation --------------------- */
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 100px;
+    width: 80vw;
+    box-sizing: border-box;
+}
+.nav-item {
+    flex: 1;
+    margin: 0 1%;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+.nav-item img {
+    width: 100%;
+    height: 75%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.nav-item img:hover {
+    transform: scale(1.05);
+}
+.nav-item p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* --------------------- Video Styles --------------------- */
+.topvideo,
+.topvideo_small {
+    width: 98vw;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.topvideo_small {
+    width: 50vw;
+}
+#troppvid,
+#vid2 {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+#vid2 {
+    margin: 1% auto 0;
+}
+/* --------------------- Video Controls --------------------- */
+/* Hide all video controls */
+#troppvid::-webkit-media-controls,
+#vid2::-webkit-media-controls {
+    display: none !important;
+}
+#troppvid::-moz-media-controls,
+#vid2::-moz-media-controls {
+    display: none !important;
+}
+#troppvid::media-controls,
+#vid2::media-controls {
+    display: none !important;
+}
+
+/* --------------------- Image Templates --------------------- */
+.image_template,
+.image_template_small {
+    z-index: 10;
+    margin: 10px auto 0;
+    display: block;
+}
+.image_template {
+    width: 98vw;
+}
+.image_template_small {
+    width: 50vw;
+}
+.troppimages,
+.troppimages_small {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.troppimages {
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* --------------------- About Me Page Specific --------------------- */
+.image {
+    padding-left: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+.text p,
+.text2 p {
+    font-size: 18px;
+    text-align: left;
+}
+.text p {
+    padding-right: 20px;
+}
+.text2 p {
+    padding-left: 20px;
+}
+.image img,
+.image2 img {
+    max-width: 100%;
+    width: 20vw;
+    height: auto;
+    display: block;
+}
+.thumbnailtitle {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* --------------------- Background Reel --------------------- */
+.bg-reel {
+    width: 100%;
+    height: 200px;
+    background: url("aboutme/reel-for-website.png") repeat-x 0 0;
+    background-size: auto 100%;
+    animation: scrollBG 30s ease-in-out infinite;
+    will-change: background-position;
+    margin: 50px 0 50px;
+}
+@keyframes scrollBG {
+    to { background-position: -12421px 0; }
+}
+.bg-reel:hover {
+    animation-play-state: paused;
+}
+
+/* --------------------- Footer --------------------- */
+.footer {
+    color: grey;
+    padding-left: 1vw;
+}
+
+.contactinfo {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    width: 89vw;
+
+    display: flex;
+    flex-direction: column;
+    text-align: right; 
+  }
+
+.contactinfoHome {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 98.5vw;
+    display: flex;
+    flex-direction: column;
+    text-align: right; 
+}
+
+.contactinfo h3 {
+    margin: 0.2rem 0;        /* top/bottom margin */
+    color: #525252;
+    font-size: 14px;
+
+}
+
+.contactinfoHome h3 {
+  margin: 0.2rem 0;        /* top/bottom margin */
+  color: #525252;
+  font-size: 14px;
+
+}
+
+
+
+/* --------------------- link --------------------- */
+.behance-link {
+    color: #ff0000; /* or any custom color */
+    text-decoration: none;
+  }
+  
+  .behance-link:hover {
+    font-weight: bolder;
+    color: #c90000; /* optional hover effect */
+  }
+
+
+
+/* --------------- coi double spreads ----------------*/
+
+.image-row {
+    width: 98vw;
+    display: flex;
+    gap: 1%;               /* space between cards */
+    box-sizing: border-box;
+    justify-content: center; /* centers the cards horizontally */
+    margin: 0 auto; 
+    margin-top: 1%;         /* (optional) centers the row in its parent */
+  }
+
+  .image-row2 {
+    width: 98vw;
+    display: flex;
+    gap: 0px;               /* space between cards */
+    box-sizing: border-box;
+    justify-content: center; /* centers the cards horizontally */
+    margin: 0 auto; 
+    margin-top: 1%;         /* (optional) centers the row in its parent */
+  }
+  
+  /* shared card styles */
+  .image-card {
+    background: #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  
+  /* exact pixel sizing */
+  .small-card {
+    width: 34.9%;         /* edit this to change small card width */
+    height: auto;           /* edit this to change both cards’ height */
+  }
+
+  
+  .large-card {
+    width: 69.8%;           /* edit this to change large card width */
+    height: auto;           /* same height as small-card */
+  }
+  
+  .image-card img {
+    width: 100%;
+
+  }
+
+
+
+
+/*------------------- mobile my work links -------------- */
+.mobile-nav-links {
+    display: none; /* Hidden by default on desktop */
+    margin: 8rem auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    gap: 5vh;
+    flex-direction: column;
+  }
+  
+  .mobile-nav-links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mobile-nav-links a:hover {
+    color: red;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /*------------ media query ----------------- */
+
+  @media (max-width: 600px) {
+  /* stack title + paragraph */
+  .topcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 98vw;          /* make the container itself 97vw */
+    margin: 0 auto;
+  }
+
+  /* ensure your <h1> sits on top */
+  .topcontainer .title {
+    width: 98vw;
+    margin: 0 auto 1rem;  /* optional: add some space below */
+    text-align: left;     /* or center, as you like */
+    font-size: 24px;
+  }
+
+  /* force the paragraph to span full viewport width */
+  .topcontainer .info {
+    width: 98vw;
+    padding-left: 0;      /* remove the 20px indent so it doesn’t overflow */
+    margin: 0 auto;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .redinfo{
+    font-size: 10px;
+  }
+
+  .header-right{
+    gap: 10px;
+    font-size: 14px;
+  }
+  h1{
+    font-size: 14px;
+  }
+  .nav-item p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+}
+    .other-work-title{
+        font-size: 20px;
+    }
+
+    .contactinfo h3 {
+        margin: 0.2rem 0;        /* top/bottom margin */
+        color: #525252;
+        font-size: 10px;
+    
+    }
+    .mobile-nav-links {
+        display: flex;
+    }
+
+    .bottom-tab-starter{
+        display: none;
+    }
+
+    .image-container{
+        display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+  .main-right {
+    display: none !important;
+  }
+  .bottom-row {
+    display: none !important;
+  }
+  .main-left {
+    width: 100vw !important;
+    align-items: flex-start;
+    padding-left: 4vw;
+  }
+  .title-main, .title-p {
+    font-size: 7vw !important;
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+
+/*--------------ipad------------------------*/
+@media only screen
+  and (min-width: 768px)      /* at least iPad portrait width */
+  and (max-width: 1366px)     /* up to large iPad Pro landscape */
+  and (pointer: coarse)       /* touch input device */
+  and (hover: none) {         /* cannot hover (i.e. not a mouse) */
+
+  /* hide your floating nav */
+  .bottom-tab,
+  .bottom-tab-starter {
+    display: none !important;
+  }
+
+  /* show the links row under the image */
+  .mobile-nav-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin: 2rem auto;
+  }
+  .mobile-nav-links a {
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
+
+
+
+
+
+
+/* ------------------------ main split ----------*/
+
+.main-split {
+    width: 98vw;
+    height: 93vh;
+    display: flex;
+    gap: 2%;               /* space between cards */
+    box-sizing: border-box;
+    justify-content: center; /* centers the cards horizontally */
+    margin: 0 auto; 
+ 
+}
+
+  .main-left {
+    background-color: rgb(255, 255, 255);
+    width: 25%;
+    height: 100%; /* Make it fill the full height of the parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push top and bottom apart */
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    }
+  
+    .bottom-row {
+    display: flex;
+    justify-content: space-between; /* pushes inner items to far left and far right */
+    width: 100%;
+}
+
+  .main-right {
+    border-radius: 5px;
+    width: 75%;     /* same height as small-card */
+    overflow: hidden;
+  }
+
+  .main-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the box and crops to fit */
+
+}
+.top-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0%; /* spacing between title and paragraph */
+}
+
+.title-p{
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 0;
+}
+.title-main {
+    word-spacing: -20px;
+    letter-spacing: -5px;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 65px;
+    margin-top: 0; /* ⬅️ removes the default space above */
+}
+
+#bottom-left{
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#bottom-right{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* ----------- nav cards ------------------------*/
+
+.card-grid {
+  width: 98vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default: 3 columns */
+  gap: 1rem ; /* spacing between cards */
+}
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+      display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.card:hover .nav-image {
+    transform: scale(1.01);
+    transition: filter 1s, transform 0.3s;
+  }
+
+/* Tablet (iPad) — 2 across */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    padding-top: 1rem;
+  }
+}
+
+/* Mobile — 1 across */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-split {
+    display: none !important;
+  }
+  .card-grid {
+    margin-top: 0 !important;
+  }
+}
+
+@media only screen
+  and (min-width: 768px)
+  and (max-width: 1366px)
+  and (pointer: coarse)
+  and (hover: none) {
+  .main-split {
+    display: none !important;
+  }
+  .card-grid {
+    margin-top: 0 !important;
+  }
+}
+
+
+.nav-image {
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 16 / 10;  /* ✅ Keeps it responsive and fitting */
+  object-fit: cover;
+}
+
+
+.nav-title{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-p{
+    padding-top: 0px;
+    margin: 0;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.bottom-tabs{
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap; /* allows wrapping if space is tight */
+    gap: 8px;         /* spacing between tags */
+}
+
+.tag{
+    color: #979797;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: lighter;
+    padding: 1px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid #979797;
+    border-radius: 500px;
+}
+
+/* Wider footer for home page */
+body#index .contactinfo, .contactinfo.home-footer {
+  width: 98vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blackbackground {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 2.5rem;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+
+
+
