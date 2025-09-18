@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 
-    const images = ['tropp4.jpg', 'tropp/final-design4.jpg', 'menos1.jpg', 'tropp/final-design3.jpg', 'menos2.jpg', 'binder/final-design4.jpg', 'coi/mockup2.png'];
+    const images = ['tropp4.jpg', 'menos1.jpg', '../skok/banner-2.png','coi/mockup2.png', 'binder/final-design4.jpg', 'tennis/home_page.jpg'];
     
     let currentIndex = 0;
 
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
             textRight: 'Tropp'
         },
         {
-            link: 'coi.html',
+            link: 'menos.html',
             textLeft: '02',
-            textRight: 'COI'
+            textRight: 'Menos'
         },
         {
             link: 'skok.html',
@@ -64,26 +64,32 @@ document.addEventListener('DOMContentLoaded', () => {
             textRight: 'Skok'
         },
         {
-            link: 'binder.html',
+            link: 'coi.html',
             textLeft: '04',
+            textRight: 'COI'
+        },
+        {
+            link: 'binder.html',
+            textLeft: '05',
             textRight: 'Binder'
         },
         {
-            link: 'menos.html',
-            textLeft: '05',
-            textRight: 'Menos'
+            link: 'tennis.html',
+            textLeft: '06',
+            textRight: 'Tennis Wearable'
         }
+
     ]
 
 
     const imageIdx = {
             0: 0,
-            1: 0,
-            2: 4,
-            3: 0,
+            1: 1,
+            2: 2,
+            3: 3,
             4: 4,
-            5: 3,
-            6: 1
+            5: 5,
+            6: 6
         }
 
     function handleLinkSwitch(currentIndex){
