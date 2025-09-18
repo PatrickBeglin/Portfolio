@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 
-    const images = ['tropp4.jpg', 'menos1.jpg', '../skok/banner-2.png','coi/mockup2.png', 'binder/final-design4.jpg', 'tennis/home_page.jpg'];
+    const images = ['tropp4.jpg', 'menos1.jpg', '../skok/banner-2.png','coi/mockup2.png', 'binder/final-design4.jpg', 'tennis/Home_page.jpg'];
     
     let currentIndex = 0;
 
